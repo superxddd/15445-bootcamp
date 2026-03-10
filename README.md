@@ -1,83 +1,77 @@
 # 15-445/645 C++ Bootcamp
-This bootcamp aims to provide a basic introduction to coding in modern C++. 
-The features of the C++ language are too vast and expansive to cover in one
-bootcamp, and quite frankly, it is learned best through experience. The staff
-is certain that 15-445 will make you a more confident C++ programmer! 
-However, we do cover some C++ topics that are necessary to know while doing
-the programming assignments. This tutorial does not cover basic C/C++ syntax.
-It mainly covers C++ programming features, particularly concepts that do not exist in C.
+这个训练营旨在为现代 C++ 编程提供一个基础入门。
+C++ 语言特性非常庞大，不可能在一次训练营中全部覆盖；而且坦白说，最好的学习方式还是实践。
+课程团队相信，15-445 会让你成为更自信的 C++ 程序员！
+不过，我们确实会讲解一些完成编程作业时必须掌握的 C++ 主题。
+本教程不会覆盖基础 C/C++ 语法，主要聚焦于 C++ 编程特性，尤其是 C 中不存在的概念。
 
-Feedback for the C++ bootcamp is always appreciated! Feel free to submit issues/PRs.
+欢迎随时为这个 C++ bootcamp 提反馈！你可以提交 issue 或 PR。
 
-## Format
-The bootcamp consists of C++ code files, located in `src/`, that are meant
-to be read in depth. Each of these files can be compiled into an executable
-with the same name. Use CMake to build these executables. This set of commands
-should build all the executables. After running these commands, these executables
-should be located in the `build` directory.
+## 组织形式
+训练营由位于 `src/` 下的一组 C++ 源码文件组成，建议深入阅读。
+每个文件都可以编译成一个同名可执行程序。
+请使用 CMake 构建这些可执行文件。
+下面这组命令会构建全部可执行程序。运行完成后，可执行文件会在 `build` 目录中。
+
 ```console
 $ mkdir build
 $ cd build
 $ cmake ..
 $ make -j8
 ```
-For instance, the `src/references.cpp` file compiles into the `references`
-executable, located in `./build`. The same holds for every file in the source
-directory.
 
-## Files
-There are fifteen files in the `src/` directory, each which cover different
-concepts. They are meant to be read in the order below, since each file 
-builds up on the previous one. However, if you know some modern C++ concepts
-and are looking to refresh your knowledge, it is probably okay to start by
-reading the files on concepts you are unfamiliar about.
+例如，`src/references.cpp` 会被编译为位于 `./build` 下的 `references` 可执行文件。
+`src/` 目录中的其他文件同理。
 
-### References and Move Semantics
-- `references.cpp`: Covers C++ references.
-- `move_semantics.cpp`: Covers C++ move semantics.
-- `move_constructors.cpp`: Covers C++ class move constructors and move assignment operators.
+## 文件说明
+`src/` 目录中共有十五个（以及一个示例）主题文件，分别讲解不同概念。
+建议按下列顺序阅读，因为后面的内容会建立在前面的基础上。
+当然，如果你已经了解部分现代 C++ 概念，想快速复习，也可以直接从不熟悉的主题开始。
 
-### C++ Templates
-- `templated_functions.cpp`: Covers C++ templated functions.
-- `templated_classes.cpp` Covers C++ templated classes.
+### 引用与移动语义
+- `references.cpp`：讲解 C++ 引用。
+- `move_semantics.cpp`：讲解 C++ 移动语义。
+- `move_constructors.cpp`：讲解 C++ 类的移动构造函数与移动赋值运算符。
 
-### Misc
-- `wrapper_class.cpp`: Covers C++ wrapper classes.
-- `iterator.cpp`: Covers implementing a basic C++ style iterator.
-- `namespaces.cpp`: Covers C++ namespaces.
+### C++ 模板
+- `templated_functions.cpp`：讲解 C++ 函数模板。
+- `templated_classes.cpp`：讲解 C++ 类模板。
 
-### C++ Standard Library (STL) Containers
-- `vectors.cpp`: Covers `std::vector`.
-- `set.cpp`: Covers `std::set`.
-- `unordered_map.cpp`: Covers `std::unordered_map`.
-- `auto.cpp`: Covers the usage of the C++ keyword `auto`, including using `auto` to iterate through C++ STL containers.
+### 杂项
+- `wrapper_class.cpp`：讲解 C++ 包装类（wrapper class）。
+- `iterator.cpp`：讲解如何实现基础的 C++ 风格迭代器。
+- `namespaces.cpp`：讲解 C++ 命名空间。
 
-### C++ Standard Library (STL) Memory
-- `unique_ptr.cpp`: Covers `std::unique_ptr`.
-- `shared_ptr.cpp`: Covers `std::shared_ptr`.
+### C++ 标准库（STL）容器
+- `vectors.cpp`：讲解 `std::vector`。
+- `set.cpp`：讲解 `std::set`。
+- `unordered_map.cpp`：讲解 `std::unordered_map`。
+- `auto.cpp`：讲解 C++ 关键字 `auto` 的使用，包括如何用 `auto` 遍历 STL 容器。
 
-### C++ Standard Library (STL) Synch Primitives
-- `mutex.cpp`: Covers `std::mutex`.
-- `scoped_lock.cpp`: Covers `std::scoped_lock`.
-- `condition_variable.cpp`: Covers `std::condition_variable`.
-- `rwlock.cpp`: Covers the usage of several C++ STL synchronization primitive libraries (`std::shared_mutex`, `std::shared_lock`, `std::unique_lock`) to create a reader-writer's lock implementation. 
+### C++ 标准库（STL）内存管理
+- `unique_ptr.cpp`：讲解 `std::unique_ptr`。
+- `shared_ptr.cpp`：讲解 `std::shared_ptr`。
 
-### Demo Code for 15-445/645 Bootcamp
-- `spring2024/s24_my_ptr.cpp`: Covers the code used in Spring 2024 bootcamp.
+### C++ 标准库（STL）同步原语
+- `mutex.cpp`：讲解 `std::mutex`。
+- `scoped_lock.cpp`：讲解 `std::scoped_lock`。
+- `condition_variable.cpp`：讲解 `std::condition_variable`。
+- `rwlock.cpp`：讲解如何组合多个 C++ STL 同步原语库（`std::shared_mutex`、`std::shared_lock`、`std::unique_lock`）实现读写锁。
 
-## Other Resources
-There are many other resources that will be helpful while you get accquainted to C++.
-I list a few here!
-- [https://en.cppreference.com/w/](https://en.cppreference.com/w/): Unofficial but quite accurate summary and examples of both C++ and C standards.
-- [https://cplusplus.com/](https://cplusplus.com/): Contains both a C++ language [tutorial](https://cplusplus.com/doc/tutorial/) and a C++ library [reference](https://cplusplus.com/reference/).
-- [Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial). This GitHub repo contains
-some information and exercises that are useful!
+### 15-445/645 Bootcamp 演示代码
+- `spring2024/s24_my_ptr.cpp`：讲解 2024 年春季 bootcamp 使用的示例代码。
 
-## Appendix: C++ Documentation for Topics Covered in the Bootcamp
-This documentation may be useful to you! It's very comprehensive (much more comprehensive than this
-bootcamp) but it may lack some readability. Overall, I think it's still a good idea to try to read
-and understand this documentation, especially when working on the projects. Although the bootcamp
-tries to be as comprehensive as possible, it still only covers the bare bones of using modern C++.
+## 其他资源
+在你逐步熟悉 C++ 的过程中，下面这些资源会很有帮助：
+
+- [https://en.cppreference.com/w/](https://en.cppreference.com/w/)：非官方但非常准确的 C++/C 标准摘要与示例。
+- [https://cplusplus.com/](https://cplusplus.com/)：包含 C++ 语言[教程](https://cplusplus.com/doc/tutorial/)和 C++ 库[参考手册](https://cplusplus.com/reference/)。
+- [Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial)：该 GitHub 仓库包含有用的资料与练习。
+
+## 附录：训练营主题对应的 C++ 官方文档
+这些文档可能会非常有用！内容很全面（比本训练营全面得多），但可读性可能不如教程。
+总体来说，尤其在做项目时，仍然建议你尝试阅读并理解这些文档。
+训练营虽尽量覆盖常见场景，但仍然只是现代 C++ 的基础入门。
 
 - [References](https://en.cppreference.com/w/cpp/language/reference)
 - [std::move](https://en.cppreference.com/w/cpp/utility/move)
